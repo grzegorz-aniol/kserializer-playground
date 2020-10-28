@@ -8,7 +8,7 @@
     </parent>
     <groupId>org.appga</groupId>
     <artifactId>kserializer-playground</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>kserializer-playground</name>
     <description>Usage of new Kotlin serialization with Spring Boot Mvc</description>
 
