@@ -1,6 +1,8 @@
 package org.appga.kserializerplayground.controller
 
 import kotlinx.serialization.json.Json
+import org.appga.kserializerplayground.model.AuthenticationIdentity
+import org.appga.kserializerplayground.model.User
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith

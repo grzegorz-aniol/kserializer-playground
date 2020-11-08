@@ -1,6 +1,7 @@
 package org.appga.kserializerplayground.controller
 
 import mu.KotlinLogging
+import org.appga.kserializerplayground.model.Person
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -27,4 +28,10 @@ class PersonController {
     fun getPersonById(@PathVariable("id") id: Long): ResponseEntity<Person> =
         ResponseEntity.ok(Person(id = id, email = "email@domain.pl", firstName = "Firstname", lastName = "Lastname"))
 
+    @GetMapping
+    fun getAllPersons(): ResponseEntity<List<Person>> =
+        ResponseEntity.ok(listOf(
+            Person(id = 1, email = "user1@domain.pl", firstName = "Name1", lastName = "Lastname1"),
+            Person(id = 2, email = "user2@domain.pl", firstName = "Name2", lastName = "Lastname2")
+        ))
 }

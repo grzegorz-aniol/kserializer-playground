@@ -1,4 +1,4 @@
-package org.appga.kserializerplayground.controller
+package org.appga.kserializerplayground.model
 
 import kotlinx.serialization.Serializable
 

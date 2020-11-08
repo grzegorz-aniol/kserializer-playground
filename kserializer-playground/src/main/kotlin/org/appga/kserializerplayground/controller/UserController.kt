@@ -1,6 +1,8 @@
 package org.appga.kserializerplayground.controller
 
 import mu.KotlinLogging
+import org.appga.kserializerplayground.model.AuthenticationIdentity
+import org.appga.kserializerplayground.model.User
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -29,6 +31,25 @@ class UserController {
             User(
                 login = "userLogin",
                 email = "user@domain.com",
+                internal = false,
+                identity = AuthenticationIdentity(serviceId = "google"),
+                roles = listOf("USER", "ADMIN")
+            )
+        )
+
+    @GetMapping("/")
+    fun getAllUsers(): List<User> =
+        listOf(
+            User(
+                login = "userLogin1",
+                email = "user1@domain.com",
+                internal = false,
+                identity = AuthenticationIdentity(serviceId = "google"),
+                roles = listOf("USER")
+            ),
+            User(
+                login = "userLogin2",
+                email = "user2@domain.com",
                 internal = false,
                 identity = AuthenticationIdentity(serviceId = "google"),
                 roles = listOf("USER", "ADMIN")
