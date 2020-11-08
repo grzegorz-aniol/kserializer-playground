@@ -1,5 +1,6 @@
 package org.appga.kserializerplayground.performance
 
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import kotlinx.serialization.json.Json
 import org.appga.kserializerplayground.model.Person
 import org.openjdk.jmh.annotations.Benchmark
@@ -14,6 +15,8 @@ import org.openjdk.jmh.annotations.Warmup
 import java.util.concurrent.TimeUnit
 
 private val json = Json
+private val objectMapper = jacksonObjectMapper()
+
 private val personSerializer = Person.serializer()
 private val person1 = Person(id = 123, email = "mblack@domain.com", firstName = "Mike", lastName = "Black")
 private val person1str = """
@@ -26,15 +29,26 @@ private val person1str = """
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 @State(Scope.Benchmark)
 @Fork(2)
-open class SerializationBenchmark {
+open class PersonBenchmark {
 
 	@Benchmark
-	open fun serializePerson() {
+	open fun kotlinSerializePerson() {
 		json.encodeToString(personSerializer, person1)
 	}
 
 	@Benchmark
-	open fun deserializePerson() {
+	open fun kotlinDeserializePerson() {
 		json.decodeFromString(personSerializer, person1str)
 	}
+
+	@Benchmark
+	open fun jacksonSerializePerson() {
+		objectMapper.writeValueAsString(person1)
+	}
+
+	@Benchmark
+	open fun jacksonDeserializePerson() {
+		objectMapper.readValue(person1str, Person::class.java)
+	}
+
 }
