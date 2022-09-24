@@ -7,11 +7,6 @@
     <version>0.0.3-SNAPSHOT</version>
     <name>kserializer-playground-parent</name>
     <description>Usage of new Kotlin serialization with Spring Boot Mvc</description>
-    <modules>
-        <module>model</module>
-        <module>kserializer-playground</module>
-        <module>performance</module>
-    </modules>
 
     <properties>
         <java.version>11</java.version>
@@ -20,6 +15,12 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
+
+    <modules>
+        <module>model</module>
+        <module>kserializer</module>
+        <module>performance</module>
+    </modules>
 
     <scm>
         <developerConnection>scm:git:https://github.com/grzegorz-aniol/kserializer-playground.git</developerConnection>

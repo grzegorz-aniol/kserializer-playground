@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <parent>
         <artifactId>kserializer-playground-parent</artifactId>
         <groupId>org.appga.kserializer-playground</groupId>
         <version>0.0.3-SNAPSHOT</version>
     </parent>
-    <artifactId>kserializer-playground</artifactId>
+    <artifactId>kserializer</artifactId>
     <version>0.0.3-SNAPSHOT</version>
-    <name>kserializer-playground</name>
+    <name>kserializer</name>
     <description>Usage of new Kotlin serialization with Spring Boot Mvc</description>
 
     <scm>
@@ -35,9 +35,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>${project.parent.groupId}</groupId>
+            <groupId>org.appga.kserializer-playground</groupId>
             <artifactId>model</artifactId>
-            <version>${project.parent.version}</version>
+            <version>0.0.3-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
