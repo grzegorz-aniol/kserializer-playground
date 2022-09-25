@@ -4,7 +4,7 @@
     <packaging>pom</packaging>
     <groupId>org.appga.kserializer-playground</groupId>
     <artifactId>kserializer-playground-parent</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
     <name>kserializer-playground-parent</name>
     <description>Usage of new Kotlin serialization with Spring Boot Mvc</description>
 
@@ -24,7 +24,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/grzegorz-aniol/kserializer-playground.git</developerConnection>
-        <tag>kserializer-playground-0.0.2</tag>
+        <tag>kserializer-playground-parent-0.0.3</tag>
     </scm>
 
     <dependencyManagement>
