@@ -45,13 +45,13 @@ class PersonControllerTest {
     @Test
     fun `when GET with ID then person should be returned`() {
         // expect
-        mockMvc.perform(get("$URL/1"))
+        mockMvc.perform(get("$URL/{id}", 1))
             .andExpect(status().isOk())
     }
 
     @Test
     fun `when GET then all persons should be returned`() {
-        mockMvc.perform(get(URL))
+        mockMvc.perform(get(URL).accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.[0].email", `is`("user1@domain.pl")))
     }

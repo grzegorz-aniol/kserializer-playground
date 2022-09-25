@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jmh.version>1.26</jmh.version>
         <jmh.generator>default</jmh.generator>  <!-- or "asm", or "reflection" -->
-        <jackson.version>2.11.2</jackson.version>
+        <jackson.version>2.13.4</jackson.version>
         <uberjar.name>benchmarks</uberjar.name>
     </properties>
 
